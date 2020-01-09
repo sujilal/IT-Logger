@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 // CSS and Js
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -6,6 +6,9 @@ import "./App.css";
 
 // Components
 import SearchBar from "./components/layouts/SearchBar";
+import Logs from "./components/logs/Logs";
+import AddBtn from "./components/layouts/AddBtn";
+import AddLogModel from "./components/logs/AddLogModel";
 
 const App = () => {
   useEffect(() => {
@@ -13,9 +16,14 @@ const App = () => {
   });
 
   return (
-    <div className="App">
+    <Fragment>
       <SearchBar />
-    </div>
+      <div className="container">
+        <AddBtn />
+        <AddLogModel />
+        <Logs />
+      </div>
+    </Fragment>
   );
 };
 
