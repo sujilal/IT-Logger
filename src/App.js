@@ -13,24 +13,30 @@ import EditLogModel from "./components/logs/EditLogModel";
 import AddTechModel from "./components/techs/AddTechModel";
 import TechListModal from "./components/techs/TechListModal";
 
+// Redux
+import { Provider } from "react-redux";
+import store from "./store";
+
 const App = () => {
   useEffect(() => {
     M.AutoInit();
   });
 
   return (
-    <Fragment>
-      <SearchBar />
-      <div className="container">
-        <AddBtn />
-        <AddLogModel />
-        <EditLogModel />
-        <AddTechModel />
-        <TechListModal />
+    <Provider store={store}>
+      <Fragment>
+        <SearchBar />
+        <div className="container">
+          <AddBtn />
+          <AddLogModel />
+          <EditLogModel />
+          <AddTechModel />
+          <TechListModal />
 
-        <Logs />
-      </div>
-    </Fragment>
+          <Logs />
+        </div>
+      </Fragment>
+    </Provider>
   );
 };
 
